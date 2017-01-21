@@ -1,15 +1,17 @@
+const express = require('express');
+const path = require('path');
 const http = require('http')
-const PORT = 4000
+const app = express();
 
-const requestHandler = (request, response) => {
-  console.log(request.url)
-  response.end('Hello Node.js Server!')
-}
+app.use(express.static(path.join(__dirname, '../dist')));
 
-const server = http.createServer(requestHandler)
+app.get('*', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
+});
 
-server.listen(PORT, (err) => {
-  if (err) (console.log('something bad happened', err))
+const port = process.env.PORT || '3000';
+app.set('port', port);
 
-  console.log("Server listening on: http://localhost:%s", PORT);
-})
+const server = http.createServer(app);
+
+server.listen(port, () => console.log(`Server listening on: http://localhost:${port}`));
