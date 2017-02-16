@@ -5,7 +5,7 @@ const request = require('request');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-  const url = 'http://yify.is/api/v2/list_movies.json?limit=30';
+  const url = 'http://yify.is/api/v2/list_movies.json?limit=5&page=5';
   let r = null;
   r = request(url);
 

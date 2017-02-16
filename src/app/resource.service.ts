@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Headers, Http } from '@angular/http';
+import { Headers, Http, RequestOptions } from '@angular/http';
 
 import 'rxjs/add/operator/toPromise';
 
@@ -12,7 +12,7 @@ export class ResourceService {
   constructor(private http: Http) { }
 
   query(): Promise<any[]> {
-    return this.http.get(this.moviesApi)
+    return this.http.get(this.moviesApi, { params: { page: 1 } })
                .toPromise()
                .then(response => response.json().data)
                .catch(this.handleError);
@@ -21,5 +21,9 @@ export class ResourceService {
   private handleError(error: any): Promise<any> {
     console.error('An error occurred', error);
     return Promise.reject(error.message || error);
+  }
+
+  private makeJson(str: string): JSON {
+    return JSON.parse(str.replace(/rating\"\:\,/, 'rating\"\:\"0\"\,'));
   }
 }
