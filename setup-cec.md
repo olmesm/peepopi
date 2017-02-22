@@ -1,6 +1,8 @@
-https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=70923
+# HDMI-CEC
 
-## CEC drivers
+[From this post](https://www.raspberrypi.org/forums/viewtopic.php?f=29&t=70923)
+
+## Build CEC driver
 
 ```
 sudo apt-get update

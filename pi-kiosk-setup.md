@@ -58,7 +58,6 @@ kweb3 -HJK "http://google.com/"
 
 | Change | Description |
 |---|---|
-
 | kweb3 | GTK3, uses HW acceleration. Only use this if running on a PI 2/3, otherwise leave it at kweb |
 | H | Set as Home URL (possibly not needed) |
 | J | Javascript Enabled |

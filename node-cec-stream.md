@@ -1,6 +1,14 @@
+# Creating a CEC-Client for Node
 
+I tried two. Neither worked so wrote this.
+
+## Get Stream-splitter
+
+Parses the stdout into usable data.
 
 `npm i stream-splitter`
+
+## Example program
 
 ```js
 const KEYS_ARRAY = [
@@ -22,7 +30,6 @@ var splitter;
 
 var splitter = cec.stdout.pipe(StreamSplitter('\n'));
 
-// Set encoding on the splitter Stream, so tokens come back as a String.
 splitter.encoding = "utf8";
 
 splitter.on("token", function(token) {
@@ -30,22 +37,10 @@ splitter.on("token", function(token) {
     return token.indexOf(`pressed: ${elem}`) > -1;
   });
 
-  if (keyPressed) {
-    console.log(keyPressed);
-  }
-
-  // console.log('.');
+  if (keyPressed) { console.log(keyPressed); }
 });
 
-splitter.on("done", function() {
-    console.log("And that's all folks!");
-});
+splitter.on("done", function() { console.log("And that's all folks!"); });
 
-splitter.on("error", function(err) {
-    // Any errors that occur on a source stream will be emitted on the
-    // splitter Stream, if the source stream is piped into the splitter
-    // Stream, and if the source stream doesn't have any other error
-    // handlers registered.
-    console.error("Oh noes!", err);
-});
+splitter.on("error", function(err) { console.error("Oh noes!", err); });
 ```
