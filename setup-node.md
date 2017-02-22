@@ -22,3 +22,10 @@ sudo reboot
 node -v
 v7.x.x (v7.6.0 at time of writing)
 ```
+
+## Add local node modules to path
+
+```bash
+echo 'export PATH="./node_modules/.bin:$PATH"' >> /home/pi/.bashrc
+sudo reboot # can also "source .bashrc"
+```

@@ -12,4 +12,5 @@ Personal project. Streaming media box for Raspberry Pi. XBMC but all Streaming.
 
 ## Resources
 
+https://github.com/octalmage/robotjs#examples
 https://github.com/mafintosh/peerflix
