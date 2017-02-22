@@ -6,7 +6,7 @@
 
 ```
 sudo apt-get update
-sudo apt-get install cmake libudev-dev libxrandr-dev python-dev swig
+sudo apt-get install cmake libudev-dev libxrandr-dev python-dev swig -y
 cd
 git clone https://github.com/Pulse-Eight/platform.git
 mkdir platform/build
