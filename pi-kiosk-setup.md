@@ -8,7 +8,7 @@ sudo raspi-config
 # > expand file system
 sudo reboot
 sudo apt-get update
-sudo apt-get upgrade
+sudo apt-get upgrade -y
 sudo apt-get install lxterminal tint2 xterm omxplayer  xinit xserver-xorg lxde unclutter -y
 sudo reboot
 ```
