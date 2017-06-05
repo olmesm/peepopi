@@ -10,16 +10,9 @@ sudo reboot
 sudo apt-get update
 sudo apt-get upgrade -y
 sudo apt-get install lxterminal tint2 xterm omxplayer  xinit xserver-xorg lxde unclutter -y
-sudo reboot
 ```
 
-You now need to prevent LXDE from starting on boot. SSH seems to lock up when LXDE starts for the first time. I was too lazy to get a keyboard out of my car, but I had a mouse lying around and managed the following.
-
-Without keyboard:
-Allow LXDE to sit for a minute. Then Click bottom right and restart.
-
-With keyboard and Mouse:
-Click bottom left for menu. Start a terminal session.
+You now need to prevent LXDE from starting on boot. SSH seems to lock up when LXDE starts for the first time.
 
 ```bash
 sudo raspi-config
